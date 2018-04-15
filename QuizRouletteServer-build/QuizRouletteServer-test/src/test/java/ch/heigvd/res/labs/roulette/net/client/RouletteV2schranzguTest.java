@@ -1,6 +1,10 @@
 package ch.heigvd.res.labs.roulette.net.client;
 
 import ch.heigvd.res.labs.roulette.data.EmptyStoreException;
+<<<<<<< HEAD
+=======
+import ch.heigvd.res.labs.roulette.data.Student;
+>>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
 import ch.heigvd.res.labs.roulette.net.protocol.RouletteV1Protocol;
 import ch.heigvd.res.labs.roulette.net.protocol.RouletteV2Protocol;
 import ch.heigvd.res.labs.roulette.net.server.RouletteV2ClientHandler;
@@ -10,6 +14,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -111,7 +119,17 @@ public class RouletteV2schranzguTest {
     client.clearDataStore();
     client.loadStudent("sacha");
     client.loadStudent("bob");
+<<<<<<< HEAD
     assertEquals("{\"students\":[{\"fullname\":\"sacha\"},{\"fullname\":\"bob\"}]}", client.listStudents());
+=======
+    
+    
+    List<Student> students = client.listStudents();
+    
+    assertTrue(students.get(0).getFullname().equals("sacha"));
+    assertTrue(students.get(1).getFullname().equals("bob"));
+    
+>>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
   }
   
 }

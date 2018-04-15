@@ -93,7 +93,11 @@ public class RouletteV2BrouchoudLechaireTest {
   @Test
   @TestAuthor(githubId = "BrouchoudLechaire")
   public void thePortShouldBe2613() {
+<<<<<<< HEAD
     assertEquals(2613, roulettePair.getServer().getPort());
+=======
+    assertEquals(2613, RouletteV2Protocol.DEFAULT_PORT);
+>>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
   }
 
   @Test
