@@ -18,27 +18,24 @@ public class RouletteV2ClientImpl extends RouletteV1ClientImpl implements IRoule
     public void clearDataStore() throws IOException {
         outputStream.writeBytes("CLEAR\n");
         // Throw the response away as the client do not need it
-        //bufferedReader.readLine();
+        bufferedReader.readLine();
     }
 
     @Override
     public List<Student> listStudents() throws IOException {
         List<Student> students = null;
         String fromServer;
-        ListCommandResponse list = new ListCommandResponse();
+        // Call the 'LIST' functionnality
         outputStream.writeBytes("LIST\n");
+        // Read the buffered reader until finding what we search for
         while ((fromServer = bufferedReader.readLine()) != null) {
             if (fromServer.contains("\"students\"")) {
-                list = new JsonObjectMapper().parseJson(bufferedReader.readLine(), ListCommandResponse.class);
+                ListCommandResponse list = new JsonObjectMapper().parseJson(fromServer, ListCommandResponse.class);
                 students = list.getStudents();
                 break;
             }
-            System.out.println("################################## Received " + fromServer);
-
         }
-
         return students;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

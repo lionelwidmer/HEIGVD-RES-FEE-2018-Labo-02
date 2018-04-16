@@ -25,8 +25,8 @@ public class QuizRouletteServer {
    */
   public static void main(String[] args) throws IOException {
     System.setProperty("java.util.logging.SimpleFormatter.format", "%5$s %n");
-    //RouletteServer server = new RouletteServer(RouletteV1Protocol.DEFAULT_PORT, RouletteV1Protocol.VERSION);
-    RouletteServer server = new RouletteServer(RouletteV2Protocol.DEFAULT_PORT, RouletteV2Protocol.VERSION);
+    RouletteServer server = new RouletteServer(RouletteV1Protocol.DEFAULT_PORT, RouletteV1Protocol.VERSION);
+    //RouletteServer server = new RouletteServer(RouletteV2Protocol.DEFAULT_PORT, RouletteV2Protocol.VERSION);
     try {
       server.startServer();
     } catch (IOException ex) {
