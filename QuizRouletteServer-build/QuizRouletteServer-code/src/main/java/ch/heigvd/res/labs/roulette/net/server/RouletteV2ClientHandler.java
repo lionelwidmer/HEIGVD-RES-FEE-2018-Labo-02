@@ -69,19 +69,23 @@ public class RouletteV2ClientHandler implements IClientHandler {
                   writer.flush();
                   break;
               case RouletteV2Protocol.CMD_BYE:
+                  // Get the number of commands and display
                   ByeCommandResponse bye = new ByeCommandResponse(nbCommands);
                   writer.println(JsonObjectMapper.toJson(bye));
                   done = true;
                   writer.flush();
                   break;
               case RouletteV2Protocol.CMD_CLEAR:
+                  // Clear the students store
                   store.clear();
+                  // Send information to the client that the store has been cleared
                   writer.println(RouletteV2Protocol.RESPONSE_CLEAR_DONE);
                   writer.flush();
                   break;
               case RouletteV2Protocol.CMD_LIST:
                   ListCommandResponse list = new ListCommandResponse();
                   list.setStudents(store.listStudents());
+                  // Write to the client the list of students that are encapsulated in the ListCommandResponse object
                   writer.println(JsonObjectMapper.toJson(list));
                   writer.flush();
                   break;
