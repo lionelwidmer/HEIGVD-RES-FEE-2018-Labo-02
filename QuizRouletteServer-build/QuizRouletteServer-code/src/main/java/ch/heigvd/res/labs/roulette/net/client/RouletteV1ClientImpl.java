@@ -22,9 +22,9 @@ import java.util.logging.Logger;
 public class RouletteV1ClientImpl implements IRouletteV1Client {
     private static final Logger LOG = Logger.getLogger(RouletteV1ClientImpl.class.getName());
     // Instance variables
-    Socket socket;
-    private DataOutputStream outputStream;
-    private BufferedReader bufferedReader;
+    protected Socket socket;
+    protected DataOutputStream outputStream;
+    protected BufferedReader bufferedReader;
 
     @Override
     public void connect(String server, int port) throws IOException {

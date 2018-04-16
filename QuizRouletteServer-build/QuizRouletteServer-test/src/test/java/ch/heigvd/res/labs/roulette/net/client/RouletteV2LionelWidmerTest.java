@@ -2,10 +2,7 @@ package ch.heigvd.res.labs.roulette.net.client;
 
 import ch.heigvd.res.labs.roulette.data.EmptyStoreException;
 import ch.heigvd.res.labs.roulette.data.Student;
-<<<<<<< HEAD
-import ch.heigvd.res.labs.roulette.data.StudentsList;
-=======
->>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
+
 import ch.heigvd.res.labs.roulette.net.protocol.RouletteV2Protocol;
 import ch.heigvd.schoolpulse.TestAuthor;
 import org.junit.Rule;
@@ -47,11 +44,7 @@ public class RouletteV2LionelWidmerTest {
     @TestAuthor(githubId = "lionelwidmer")
     public void itShouldBePossibleForARouletteClientToConnectToARouletteServer() throws Exception {
         int port = roulettePair.getServer().getPort();
-<<<<<<< HEAD
-        IRouletteV2Client client = (IRouletteV2Client) roulettePair.getClient();
-=======
         IRouletteV2Client client = new RouletteV2ClientImpl();
->>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
         assertFalse(client.isConnected());
         client.connect("localhost", port);
         assertTrue(client.isConnected());
@@ -67,11 +60,8 @@ public class RouletteV2LionelWidmerTest {
     @TestAuthor(githubId = "lionelwidmer")
     public void theServerShouldHaveZeroStudentsAtStart() throws IOException {
         int port = roulettePair.getServer().getPort();
-<<<<<<< HEAD
-        IRouletteV2Client client = (IRouletteV2Client) roulettePair.getClient();
-=======
         IRouletteV2Client client = new RouletteV2ClientImpl();
->>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
+
         client.connect("localhost", port);
         int numberOfStudents = client.getNumberOfStudents();
         assertEquals(0, numberOfStudents);

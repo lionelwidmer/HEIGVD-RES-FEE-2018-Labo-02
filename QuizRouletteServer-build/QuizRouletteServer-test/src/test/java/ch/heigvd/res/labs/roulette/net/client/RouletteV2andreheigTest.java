@@ -1,24 +1,18 @@
 package ch.heigvd.res.labs.roulette.net.client;
 
-<<<<<<< HEAD
-import ch.heigvd.res.labs.roulette.net.protocol.RouletteV2Protocol;
-=======
+
 import ch.heigvd.res.labs.roulette.data.JsonObjectMapper;
 import ch.heigvd.res.labs.roulette.data.Student;
 import ch.heigvd.res.labs.roulette.net.protocol.RouletteV2Protocol;
 import ch.heigvd.res.labs.roulette.data.StudentsList;
->>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
 import ch.heigvd.schoolpulse.TestAuthor;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
-<<<<<<< HEAD
-=======
 import java.util.List;
 import jdk.nashorn.internal.parser.JSONParser;
->>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -70,17 +64,11 @@ public class RouletteV2andreheigTest {
     client.loadStudent("pikachu");
     client.loadStudent("goku");
     client.loadStudent("flubber");
-<<<<<<< HEAD
-    assertEquals("{\"students\":[{\"fullname\":\"pikachu\"},{\"fullname\":\"goku\"}]},{\"fullname\":\"flubber\"}]}", client.listStudents());
-=======
-    
     List<Student> listExpected  = client.listStudents();
     
     assertTrue(listExpected.get(0).getFullname().equals("pikachu"));
     assertTrue(listExpected.get(1).getFullname().equals("goku"));
     assertTrue(listExpected.get(2).getFullname().equals("flubber"));
-    
->>>>>>> b65155cf483e3853ad06b55749909b46bfebbb8d
   }
 
   @Test
