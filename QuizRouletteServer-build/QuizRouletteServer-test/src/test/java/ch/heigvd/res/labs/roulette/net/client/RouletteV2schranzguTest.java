@@ -60,6 +60,8 @@ public class RouletteV2schranzguTest {
     assertEquals(2, client.getNumberOfStudents());
     client.loadStudent("fabienne");
     assertEquals(3, client.getNumberOfStudents());
+    
+    client.clearDataStore();
 
     exception.expect(EmptyStoreException.class);
     client.pickRandomStudent();
